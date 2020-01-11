@@ -1,0 +1,10 @@
+= tar-stream-chunker
+
+Splits stdin onto chunk files and writes resulting TAR archive to stdout.
+Initial motivation was to use it for backup streaming to tarsnap.com.
+
+Usage example:
+`$ pg_dump | tar-stream-chunker --file-name dump.sql --chunk-size 500000000 | tarsnap -cvf dump.daily.$(date +%Y%m%d.%H%M%S)`
+
+
+
