@@ -1,0 +1,12 @@
+* text=auto
+
+*.adoc text
+*.c text
+*.h text
+*.js text
+*.yml text
+*.yaml text
+*.json text
+*.sql text
+*.txt text
+*.sh text eol=lf

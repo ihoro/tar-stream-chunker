@@ -1,0 +1,17 @@
+{
+  "name": "tar-stream-chunker.c-itest",
+  "version": "1.0.0",
+  "type": "commonjs",
+  "scripts": {
+    "test": "../make.sh && jest",
+    "test-watch": "jest --watchAll"
+  },
+  "devDependencies": {
+    "jest": "^24.9.0",
+    "rxjs": "^6.5.4",
+    "uuid": "^3.3.3"
+  },
+  "jest": {
+    "testTimeout": 10000
+  }
+}
