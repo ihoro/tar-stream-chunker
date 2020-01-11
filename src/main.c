@@ -48,22 +48,24 @@ main(int argc, char *argv[]) {
 
 static void
 write_tar_entry(int chunk_index, void *buf, int len) {
+	unsigned int now = time(NULL);
+
 	char chunk_name[99] = { 0 };
 	strcpy(chunk_name, file_name);
 	sprintf(chunk_name + strlen(file_name), ".%05d", chunk_index);
 
 	char header[512] = { 0 };
-	memcpy(header, chunk_name, strlen(chunk_name));			// name
-	memcpy(header+100, "000644 ", 7);				// modes
-	memcpy(header+108, "000000 ", 7);				// uid
-	memcpy(header+116, "000000 ", 7);				// gid
-	sprintf(header+124, "%011o ", len);				// size
-	sprintf(header+136, "%011o ", (unsigned int) time(NULL));	// time
-	header[156] = 48 + 0;						// type=file
-	memcpy(header+257, "ustar", 5);					// ustar magic
-	memcpy(header+263, "00", 2);					// ustar ver
-	memcpy(header+329, "000000 ", 7);				// dev major
-	memcpy(header+337, "000000 ", 7);				// dev minor
+	memcpy(header, chunk_name, strlen(chunk_name));	/* name */
+	memcpy(header+100, "000644 ", 7);		/* modes */
+	memcpy(header+108, "000000 ", 7);		/* uid */
+	memcpy(header+116, "000000 ", 7);		/* gid */
+	sprintf(header+124, "%011o ", len);		/* size */
+	sprintf(header+136, "%011o ", now);		/* time */
+	header[156] = 48 + 0;				/* type=file */
+	memcpy(header+257, "ustar", 5);			/* ustar magic */
+	memcpy(header+263, "00", 2);			/* ustar version */
+	memcpy(header+329, "000000 ", 7);		/* device major */
+	memcpy(header+337, "000000 ", 7);		/* device minor */
 
 	int check_sum = 8 * 32;
 	for (int i = 0; i < 148; i++) {
