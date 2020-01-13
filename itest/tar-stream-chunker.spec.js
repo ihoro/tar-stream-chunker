@@ -3,7 +3,7 @@
 const t = require('./scaffold/t');
 const { tap } = require('rxjs/operators');
 
-const cmd = `../build/tar-stream-chunker`;
+const cmd = `../tar_stream_chunker`;
 
 test('should print usage help if no params provided', t.pipe(
   t.run .exec(cmd),

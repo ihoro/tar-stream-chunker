@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "type": "commonjs",
   "scripts": {
-    "test": "../make.sh && jest",
+    "test": "cd .. && make clean && make && cd itest && jest",
     "test-watch": "jest --watchAll"
   },
   "devDependencies": {
