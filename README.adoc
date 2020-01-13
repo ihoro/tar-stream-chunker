@@ -10,6 +10,12 @@ Initial motivation was to use it for backup streaming to tarsnap.com.
 
 Usual `make` should be enough, expecting you have a POSIX compliant system.
 
+== Tests
+
+Integration tests suite is based on node.js:
+
+`$ cd itest; npm test`
+
 == Usage
 
 `$ tar_stream_chunker { --file-name | -f } <file-name> { --chunk-size | -s } <bytes>`
