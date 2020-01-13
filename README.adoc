@@ -12,7 +12,7 @@ Usual `make` should be enough, expecting you have a POSIX compliant system.
 
 == Tests
 
-Integration tests suite is based on node.js:
+Integration test suite is based on node.js:
 
 `$ cd itest; npm test`
 
