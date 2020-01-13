@@ -1,10 +1,32 @@
 = tar-stream-chunker
 
 Splits stdin onto chunk files and writes resulting TAR archive to stdout.
+
+It can help to handle data stream of unknown size without hitting a disk. As long as creating TAR archive as a stream needs to now file size in advance, that is why the idea of the chunker is to split input stream onto chunks with known size.
+
 Initial motivation was to use it for backup streaming to tarsnap.com.
 
-Usage example:
-`$ pg_dump | tar-stream-chunker --file-name dump.sql --chunk-size 500000000 | tarsnap -cvf dump.daily.$(date +%Y%m%d.%H%M%S)`
+== Build
 
+Usual `make` should be enough, expecting you have a POSIX compliant system.
 
+== Usage
+
+`$ tar_stream_chunker { --file-name | -f } <file-name> { --chunk-size | -s } <bytes>`
+
+And redirect its stdout to your target and that's it.
+
+== Usage examples
+
+PostgreSQL dump what is streamed to tarsnap:
+`$ pg_dump | tar-stream-chunker -f dump.sql -s 500000000 | tarsnap -cvf dump.daily.$(date +%Y%m%d.%H%M%S) @-`
+
+Let's see what's inside a resulting TAR:
+```
+$ cat 3MB-file | tar-stream-chunker --file-name file --chunk-size 1000000 > archive.tar
+$ tar -tf archive.tar
+file.00001
+file.00002
+file.00003
+```
 
