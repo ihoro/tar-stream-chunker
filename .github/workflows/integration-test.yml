@@ -18,7 +18,7 @@ jobs:
       env:
         CC: ${{ matrix.compiler }}
       run: |
-        sudo apt-get install node
+        sudo apt-get update && sudo apt-get install -y node
         cd itest
         npm test
 
