@@ -40,7 +40,7 @@ test.each([
 ('should error if file name param argument is not provided: %s', t.each('params').pipe(
   t.run .exec(_ => `${cmd} ${t.params}`),
   tap(({ stderr, error }) => {
-    expect(stderr).toContain("option `--file-name' requires an argument");
+    expect(stderr).toMatch(/option .--file-name. requires an argument/);
     expect(error.code).not.toEqual(0);
   }),
 ));
@@ -65,7 +65,7 @@ test.each([
 ('should error if chunk size param argument is not provided: %s', t.each('params').pipe(
   t.run .exec(_ => `${cmd} ${t.params}`),
   tap(({ stderr, error }) => {
-    expect(stderr).toContain("option `--chunk-size' requires an argument");
+    expect(stderr).toMatch(/option .--chunk-size. requires an argument/);
     expect(error.code).not.toEqual(0);
   }),
 ));
