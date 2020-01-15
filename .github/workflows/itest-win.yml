@@ -1,0 +1,23 @@
+name: itest-win
+
+on: [push]
+
+jobs:
+  ubuntu:
+    runs-on: windows-latest
+    timeout-minutes: 10
+
+    strategy:
+      fail-fast: false
+      #matrix:
+      #  compiler: [gcc, clang]
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: software requirements
+      run: |
+        sudo apt-get
+        gcc --version
+        clang --version
+        uname -a
+
