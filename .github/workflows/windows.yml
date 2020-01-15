@@ -17,9 +17,4 @@ jobs:
     - uses: numworks/setup-msys2@v1
     - name: development environment
         run: bash.exe --version
-#      run: pacman -S --needed base-devel msys2-devel
-#    - name: test
-#      env:
-#        CC: ${{ matrix.compiler }}
-#      run: make e2e
 
