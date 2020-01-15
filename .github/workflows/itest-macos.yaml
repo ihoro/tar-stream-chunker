@@ -5,7 +5,7 @@ on: [push]
 jobs:
   macos:
     runs-on: macos-latest
-    timeout-minutes: 7
+    timeout-minutes: 10
 
     strategy:
       fail-fast: false
