@@ -12,6 +12,6 @@
     "uuid": "^3.3.3"
   },
   "jest": {
-    "testTimeout": 10000
+    "testTimeout": 30000
   }
 }
