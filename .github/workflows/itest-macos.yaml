@@ -11,13 +11,12 @@ jobs:
       fail-fast: false
       matrix:
         compiler: [gcc, clang]
-        nodejs: [13.6.0]
 
     steps:
     - uses: actions/checkout@v1
     - name: software requirements
       env:
-        NODEJS_PKG_URL: https://nodejs.org/dist/v${{ matrix.nodejs }}/node-v${{ matrix.nodejs }}.pkg
+        NODEJS_PKG_URL: https://nodejs.org/dist/v13.6.0/node-v13.6.0.pkg
       run: sudo curl "$NODEJS_PKG_URL" > $HOME/nodejs.pkg && sudo installer -verbose -pkg $HOME/nodejs.pkg -target /
     - name: test
       env:
