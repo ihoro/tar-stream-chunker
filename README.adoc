@@ -14,7 +14,7 @@ Usual `make` should be enough, expecting you have a POSIX compliant system.
 
 Integration test suite is based on node.js:
 
-`$ cd itest; npm test`
+`$ cd itest; npm ci && npm test`
 
 == Usage
 
