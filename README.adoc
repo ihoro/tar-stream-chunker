@@ -1,5 +1,7 @@
 = tar-stream-chunker
 
+image:https://github.com/ihoro/tar-stream-chunker.c/workflows/itest/badge.svg[link="https://github.com/ihoro/tar-stream-chunker.c/actions?query=workflow%3Aitest"]
+
 Splits stdin onto chunk files and writes resulting TAR archive to stdout.
 
 It can help to handle data stream of unknown size without hitting a disk. As long as creating TAR archive as a stream needs to know file size in advance, that is why the idea of the chunker is to split input stream onto chunks with known size.
