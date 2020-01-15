@@ -14,10 +14,9 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - uses: actions/setup-node@v1
     - uses: numworks/setup-msys2@v1
-    - name: development environment
-      run: msys2do pacman -S --noconfirm base-devel msys2-devel
+    - name: environment
+      run: msys2do pacman -S --noconfirm base-devel msys2-devel mingw-w64-x86_64-nodejs
     - name: test
       env:
         CC: ${{ matrix.compiler }}
