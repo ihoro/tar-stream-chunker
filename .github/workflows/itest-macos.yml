@@ -13,15 +13,10 @@ jobs:
         compiler: [gcc, clang]
 
     steps:
-    - uses: actions/checkout@v1
-    - name: software requirements
-      env:
-        NODEJS_PKG_URL: https://nodejs.org/dist/v13.6.0/node-v13.6.0.pkg
-      run: sudo curl "$NODEJS_PKG_URL" > $HOME/nodejs.pkg && sudo installer -verbose -pkg $HOME/nodejs.pkg -target /
+    - uses: actions/checkout@v2
+    - uses: actions/setup-node@v1
     - name: test
       env:
         CC: ${{ matrix.compiler }}
-      run: |
-        cd itest
-        npm ci && npm test
+      run: cd itest && npm ci && npm test
 
