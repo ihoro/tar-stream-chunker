@@ -13,10 +13,11 @@ jobs:
         compiler: [gcc, clang]
 
     steps:
-    - uses: actions/checkout@v1
-    - name: software requirements
-      run: sudo apt-get update && sudo apt-get install -y nodejs
+    - uses: actions/checkout@v2
     - name: test
+      uses: actions/setup-node@v1
+      with:
+        node-version: 13.x
       env:
         CC: ${{ matrix.compiler }}
       run: |
