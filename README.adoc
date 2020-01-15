@@ -2,6 +2,9 @@
 
 image:https://github.com/ihoro/tar-stream-chunker.c/workflows/linux/badge.svg[link="https://github.com/ihoro/tar-stream-chunker.c/actions?query=workflow%3Alinux"]
 image:https://github.com/ihoro/tar-stream-chunker.c/workflows/macos/badge.svg[link="https://github.com/ihoro/tar-stream-chunker.c/actions?query=workflow%3Amacos"]
+image:https://img.shields.io/lgtm/alerts/g/ihoro/tar-stream-chunker.c.svg?logo=lgtm&logoWidth=18[link="https://lgtm.com/projects/g/ihoro/tar-stream-chunker.c/alerts/"]
+image:https://img.shields.io/lgtm/grade/cpp/g/ihoro/tar-stream-chunker.c.svg?logo=lgtm&logoWidth=18[link="https://lgtm.com/projects/g/ihoro/tar-stream-chunker.c/context:cpp"]
+image:https://img.shields.io/lgtm/grade/javascript/g/ihoro/tar-stream-chunker.c.svg?logo=lgtm&logoWidth=18[link="https://lgtm.com/projects/g/ihoro/tar-stream-chunker.c/context:javascript"]
 
 Splits stdin onto chunk files and writes resulting TAR archive to stdout.
 
