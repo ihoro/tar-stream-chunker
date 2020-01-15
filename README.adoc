@@ -11,13 +11,14 @@ Initial motivation was to use it for backup streaming to tarsnap.com.
 
 == Build
 
-Usual `make` should be enough, expecting you have a POSIX compliant system.
+Expecting you have a POSIX compliant system:
+`$ make`
 
 == Tests
 
-End-to-end test suite is based on node.js:
+End-to-end test suite requires node.js:
 
-`$ cd e2e; npm ci && npm test`
+`$ make e2e`
 
 == Usage
 

@@ -3,10 +3,10 @@
   "version": "1.0.0",
   "type": "commonjs",
   "scripts": {
-    "test": "cd .. && make clean && make && cd e2e && jest",
+    "test": "jest",
     "test-watch": "jest --watchAll"
   },
-  "devDependencies": {
+  "dependencies": {
     "jest": "^24.9.0",
     "rxjs": "^6.5.4",
     "uuid": "^3.3.3"
