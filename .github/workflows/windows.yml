@@ -20,5 +20,6 @@ jobs:
     - name: test
       env:
         CC: ${{ matrix.compiler }}
+        E2E_CMD_PREFIX: msys2do
       run: msys2do make e2e
 
