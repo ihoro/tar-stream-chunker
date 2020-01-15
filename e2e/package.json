@@ -1,9 +1,9 @@
 {
-  "name": "tar-stream-chunker.c-itest",
+  "name": "tar-stream-chunker.c-e2e",
   "version": "1.0.0",
   "type": "commonjs",
   "scripts": {
-    "test": "cd .. && make clean && make && cd itest && jest",
+    "test": "cd .. && make clean && make && cd e2e && jest",
     "test-watch": "jest --watchAll"
   },
   "devDependencies": {

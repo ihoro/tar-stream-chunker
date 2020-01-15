@@ -1,10 +1,10 @@
-name: itest-linux
+name: e2e-macos
 
 on: [push]
 
 jobs:
-  ubuntu:
-    runs-on: ubuntu-latest
+  macos:
+    runs-on: macos-latest
     timeout-minutes: 10
 
     strategy:
@@ -18,5 +18,5 @@ jobs:
     - name: test
       env:
         CC: ${{ matrix.compiler }}
-      run: cd itest && npm ci && npm test
+      run: cd e2e && npm ci && npm test
 

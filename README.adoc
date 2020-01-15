@@ -1,8 +1,8 @@
 = tar-stream-chunker
 
-image:https://github.com/ihoro/tar-stream-chunker.c/workflows/itest-linux/badge.svg[link="https://github.com/ihoro/tar-stream-chunker.c/actions?query=workflow%3Aitest-linux"]
-image:https://github.com/ihoro/tar-stream-chunker.c/workflows/itest-macos/badge.svg[link="https://github.com/ihoro/tar-stream-chunker.c/actions?query=workflow%3Aitest-macos"]
-image:https://github.com/ihoro/tar-stream-chunker.c/workflows/itest-win/badge.svg[link="https://github.com/ihoro/tar-stream-chunker.c/actions?query=workflow%3Aitest-win"]
+image:https://github.com/ihoro/tar-stream-chunker.c/workflows/e2e-linux/badge.svg[link="https://github.com/ihoro/tar-stream-chunker.c/actions?query=workflow%3Ae2e-linux"]
+image:https://github.com/ihoro/tar-stream-chunker.c/workflows/e2e-macos/badge.svg[link="https://github.com/ihoro/tar-stream-chunker.c/actions?query=workflow%3Ae2e-macos"]
+image:https://github.com/ihoro/tar-stream-chunker.c/workflows/e2e-win/badge.svg[link="https://github.com/ihoro/tar-stream-chunker.c/actions?query=workflow%3Ae2e-win"]
 
 Splits stdin onto chunk files and writes resulting TAR archive to stdout.
 
@@ -18,7 +18,7 @@ Usual `make` should be enough, expecting you have a POSIX compliant system.
 
 Integration test suite is based on node.js:
 
-`$ cd itest; npm ci && npm test`
+`$ cd e2e; npm ci && npm test`
 
 == Usage
 
