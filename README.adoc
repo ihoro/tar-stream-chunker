@@ -2,6 +2,7 @@
 
 image:https://github.com/ihoro/tar-stream-chunker.c/workflows/itest-linux/badge.svg[link="https://github.com/ihoro/tar-stream-chunker.c/actions?query=workflow%3Aitest-linux"]
 image:https://github.com/ihoro/tar-stream-chunker.c/workflows/itest-macos/badge.svg[link="https://github.com/ihoro/tar-stream-chunker.c/actions?query=workflow%3Aitest-macos"]
+image:https://github.com/ihoro/tar-stream-chunker.c/workflows/itest-win/badge.svg[link="https://github.com/ihoro/tar-stream-chunker.c/actions?query=workflow%3Aitest-win"]
 
 Splits stdin onto chunk files and writes resulting TAR archive to stdout.
 
