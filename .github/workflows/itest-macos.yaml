@@ -1,0 +1,28 @@
+name: itest-macos
+
+on: [push]
+
+jobs:
+  macos:
+    runs-on: macos-latest
+    timeout-minutes: 7
+
+    strategy:
+      fail-fast: false
+      matrix:
+        compiler: [gcc, clang]
+        nodejs: [13.6.0]
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: software requirements
+      env:
+        NODEJS_PKG_URL: https://nodejs.org/dist/v${{ matrix.nodejs }}/node-v${{ matrix.nodejs }}.pkg
+      run: sudo curl "$NODEJS_PKG_URL" > $HOME/nodejs.pkg && sudo installer -verbose -pkg $HOME/nodejs.pkg -target /
+    - name: test
+      env:
+        CC: ${{ matrix.compiler }}
+      run: |
+        cd itest
+        npm ci && npm test
+
