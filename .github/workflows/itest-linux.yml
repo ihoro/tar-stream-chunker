@@ -1,4 +1,4 @@
-name: itest
+name: itest-linux
 
 on: [push]
 

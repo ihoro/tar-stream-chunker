@@ -1,6 +1,6 @@
 = tar-stream-chunker
 
-image:https://github.com/ihoro/tar-stream-chunker.c/workflows/itest/badge.svg[link="https://github.com/ihoro/tar-stream-chunker.c/actions?query=workflow%3Aitest"]
+image:https://github.com/ihoro/tar-stream-chunker.c/workflows/itest-linux/badge.svg[link="https://github.com/ihoro/tar-stream-chunker.c/actions?query=workflow%3Aitest-linux"]
 
 Splits stdin onto chunk files and writes resulting TAR archive to stdout.
 
