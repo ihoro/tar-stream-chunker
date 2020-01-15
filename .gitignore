@@ -5,3 +5,4 @@
 **/node_modules/
 /test/coverage/
 tar_stream_chunker
+/e2e/package-lock.json

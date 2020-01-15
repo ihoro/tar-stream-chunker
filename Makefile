@@ -6,7 +6,7 @@ $(P): $(SOURCES) Makefile
 
 clean:
 	rm -f $(P) src/*.o
-	rm -rf e2e/node_modules
+	rm -rf e2e/node_modules e2e/package-lock.json
 
 e2e: clean $(P)
 	cd e2e && npm install && npm test
