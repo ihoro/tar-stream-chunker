@@ -1,10 +1,10 @@
-name: e2e-linux
+name: macos
 
 on: [push]
 
 jobs:
-  ubuntu:
-    runs-on: ubuntu-latest
+  macos:
+    runs-on: macos-latest
     timeout-minutes: 10
 
     strategy:

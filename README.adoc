@@ -1,7 +1,7 @@
 = tar-stream-chunker
 
-image:https://github.com/ihoro/tar-stream-chunker.c/workflows/e2e-linux/badge.svg[link="https://github.com/ihoro/tar-stream-chunker.c/actions?query=workflow%3Ae2e-linux"]
-image:https://github.com/ihoro/tar-stream-chunker.c/workflows/e2e-macos/badge.svg[link="https://github.com/ihoro/tar-stream-chunker.c/actions?query=workflow%3Ae2e-macos"]
+image:https://github.com/ihoro/tar-stream-chunker.c/workflows/linux/badge.svg[link="https://github.com/ihoro/tar-stream-chunker.c/actions?query=workflow%3Alinux"]
+image:https://github.com/ihoro/tar-stream-chunker.c/workflows/macos/badge.svg[link="https://github.com/ihoro/tar-stream-chunker.c/actions?query=workflow%3Amacos"]
 
 Splits stdin onto chunk files and writes resulting TAR archive to stdout.
 
