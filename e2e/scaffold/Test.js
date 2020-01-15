@@ -3,8 +3,8 @@
 const uuid = require('uuid/v4');
 const fs = require('fs');
 const child_process = require('child_process');
-const { from, of, Observable, bindCallback } = require('rxjs');
-const { mergeMap, tap, finalize, count } = require('rxjs/operators');
+const { of, Observable } = require('rxjs');
+const { tap, finalize } = require('rxjs/operators');
 
 module.exports = class {
   constructor() {
