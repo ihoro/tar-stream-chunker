@@ -12,6 +12,7 @@ Initial motivation was to use it for backup streaming to tarsnap.com.
 == Build
 
 Expecting you have a POSIX compliant system:
+
 `$ make`
 
 == Tests
