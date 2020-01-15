@@ -16,5 +16,5 @@ jobs:
     - uses: actions/checkout@v2
     - uses: numworks/setup-msys2@v1
     - name: development environment
-        run: bash.exe --version
+      run: bash.exe --version
 
