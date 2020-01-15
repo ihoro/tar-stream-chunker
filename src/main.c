@@ -88,6 +88,8 @@ write_tar_entry(int chunk_index, void *buf, int len) {
 	/* overflow */
 	int s = len & 511;
 	if (s) {
-		write(STDOUT_FILENO, end_of_tar, 512 - s);
+		if (write(STDOUT_FILENO, end_of_tar, 512 - s) <= 0) {
+			errx(1, "Could not write TAR entry padding.");
+		}
 	}
 }
