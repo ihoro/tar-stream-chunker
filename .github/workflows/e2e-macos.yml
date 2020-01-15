@@ -18,5 +18,5 @@ jobs:
     - name: test
       env:
         CC: ${{ matrix.compiler }}
-      run: cd e2e && npm ci && npm test
+      run: make e2e
 
