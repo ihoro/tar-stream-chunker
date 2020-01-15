@@ -38,7 +38,9 @@ main(int argc, char *argv[]) {
 		write_tar_entry(chunk_index, buf, chunk_size - window);
 	}
 
-	write(STDOUT_FILENO, end_of_tar, 1024);
+	if (write(STDOUT_FILENO, end_of_tar, 1024) <= 0) {
+		errx(1, "Could not write end of TAR.");
+	}
 
 	free(buf);
 	free(file_name);
@@ -76,8 +78,12 @@ write_tar_entry(int chunk_index, void *buf, int len) {
 	}
 	sprintf(header+148, "%06o ", check_sum);
 
-	write(STDOUT_FILENO, header, 512);
-	write(STDOUT_FILENO, buf, len);
+	if (write(STDOUT_FILENO, header, 512) <= 0) {
+		errx(1, "Could not write TAR entry header.");
+	}
+	if (write(STDOUT_FILENO, buf, len) <= 0) {
+		errx(1, "Could not write TAR entry body.");
+	}
 
 	/* overflow */
 	int s = len & 511;
