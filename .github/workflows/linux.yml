@@ -19,4 +19,8 @@ jobs:
       env:
         CC: ${{ matrix.compiler }}
       run: make e2e
+    - name: valgrind
+      env:
+        CC: ${{ matrix.compiler }}
+      run: make valgrind
 
