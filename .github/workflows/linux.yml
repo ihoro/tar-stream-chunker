@@ -22,5 +22,7 @@ jobs:
     - name: valgrind
       env:
         CC: ${{ matrix.compiler }}
-      run: make valgrind
+      run: |
+        sudo apt-get install -y valgrind
+        make valgrind
 
