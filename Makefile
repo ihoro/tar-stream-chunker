@@ -12,10 +12,10 @@ clean:
 
 valgrind: clean
 	$(CC) -o $(P) -Wall -Werror -O0 -g $(SOURCES)
-	$(VALGRIND) ./$(P) -f file -s   1 < <(head -c   1 /dev/random) > /dev/null
-	$(VALGRIND) ./$(P) -f file -s   1 < <(head -c 100 /dev/random) > /dev/null
-	$(VALGRIND) ./$(P) -f file -s  10 < <(head -c 100 /dev/random) > /dev/null
-	$(VALGRIND) ./$(P) -f file -s 100 < <(head -c 100 /dev/random) > /dev/null
+	$(VALGRIND) ./$(P) -f file -s  1 < <(head -c  1 /dev/random) > /dev/null
+	$(VALGRIND) ./$(P) -f file -s  1 < <(head -c 10 /dev/random) > /dev/null
+	$(VALGRIND) ./$(P) -f file -s  2 < <(head -c 10 /dev/random) > /dev/null
+	$(VALGRIND) ./$(P) -f file -s 10 < <(head -c 10 /dev/random) > /dev/null
 
 e2e: clean $(P)
 	cd e2e && npm install && npm test
