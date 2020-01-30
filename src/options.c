@@ -61,16 +61,16 @@ validate_options(void) {
 static void
 usage(void) {
 	fprintf(stderr,
-		"tar-stream-chunker: splits stdin onto chunks of given size and collect chunk\n" \
+		"tar_stream_chunker: splits stdin onto chunks of given size and collect chunk\n" \
 		"files as TAR archive what is written to stdout.\n" \
 		"\n" \
-		"Usage: tar-stream-chunker\n" \
+		"Usage: tar_stream_chunker\n" \
 		"\t{ --file-name | -f } <chunk-file-name>\n" \
 		"\t{ --chunk-size | -s } <bytes>\n" \
 		"\n" \
 		"Examples:\n" \
-		"\t$ ... | tar-stream-chunker -f dump.sql -s 500000000 | ... > result.tar\n"
-		"\t$ tar-stream-chunker -f dump.sql -s 500000000 < input > output.tar\n"
+		"\t$ ... | tar_stream_chunker -f dump.sql -s 500000000 | ... > result.tar\n"
+		"\t$ tar_stream_chunker -f dump.sql -s 500000000 < input > output.tar\n"
 	);
 	exit(-1);
 }
