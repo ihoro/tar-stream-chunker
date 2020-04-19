@@ -21,7 +21,7 @@ valgrind: clean
 e2e: clean $(P)
 	cd e2e && npm install && npm test
 
-install:
-	cp $(P) $(PREFIX)/bin/
-
 all: $(P)
+
+install: all
+	cp $(P) $(DESTDIR)$(PREFIX)/bin/
