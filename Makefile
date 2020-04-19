@@ -1,3 +1,4 @@
+PREFIX?=/usr/local
 P=tar_stream_chunker
 SOURCES=src/main.c src/options.c
 SHELL=/usr/bin/env bash
@@ -19,5 +20,8 @@ valgrind: clean
 
 e2e: clean $(P)
 	cd e2e && npm install && npm test
+
+install:
+	cp $(P) $(PREFIX)/bin/
 
 all: $(P)
