@@ -34,14 +34,20 @@ And redirect its stdout to your target and that's it.
 
 PostgreSQL dump what is streamed to tarsnap:
 
-`$ pg_dump | tar-stream-chunker -f dump.sql -s 500000000 | tarsnap -cvf dump.daily.$(date +%Y%m%d.%H%M%S) @-`
+`$ pg_dump | tar_stream_chunker -f dump.sql -s 500000000 | tarsnap -cvf dump.daily.$(date +%Y%m%d.%H%M%S) @-`
 
 Let's see what's inside a resulting TAR:
 ```
-$ cat 3MB-file | tar-stream-chunker --file-name file --chunk-size 1000000 > archive.tar
-$ tar -tf archive.tar
+$ cat 3MB-file | tar_stream_chunker --file-name file --chunk-size 1000000 > result.tar
+$ tar -tf result.tar
 file.00001
 file.00002
 file.00003
+```
+
+And original input can be re-assembled as follows:
+```
+$ tar -xf result.tar; cat file.* > original-3MB-file
+$ tar -xOf result.tar > original-3MB-file
 ```
 

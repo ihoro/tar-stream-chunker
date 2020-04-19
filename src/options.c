@@ -61,16 +61,28 @@ validate_options(void) {
 static void
 usage(void) {
 	fprintf(stderr,
-		"tar_stream_chunker: splits stdin onto chunks of given size and collect chunk\n" \
-		"files as TAR archive what is written to stdout.\n" \
-		"\n" \
-		"Usage: tar_stream_chunker\n" \
-		"\t{ --file-name | -f } <chunk-file-name>\n" \
-		"\t{ --chunk-size | -s } <bytes>\n" \
-		"\n" \
-		"Examples:\n" \
-		"\t$ ... | tar_stream_chunker -f dump.sql -s 500000000 | ... > result.tar\n"
-		"\t$ tar_stream_chunker -f dump.sql -s 500000000 < input > output.tar\n"
+		"tar_stream_chunker: splits stdin of unknown size onto chunks of given size\n"
+		"and collect chunk files as a TAR archive what is written to stdout.\n"
+		"\n"
+		"Usage: tar_stream_chunker\n"
+			"\t{ --file-name | -f } <chunk-file-name>\n"
+			"\t{ --chunk-size | -s } <bytes>\n"
+		"\n"
+		"Examples:\n"
+			"\t$ ... | tar_stream_chunker -f dump.sql -s 500000000 | ... > result.tar\n"
+			"\t$ tar_stream_chunker -f dump.sql -s 500000000 < input > output.tar\n"
+			"\t$ pg_dump ... | tar_stream_chunker ... | tarsnap -cf archive @-\n"
+		"\n"
+		"What to expect within a resulting TAR file:\n"
+			"\t$ cat 3MB-file | tar_stream_chunker -f file -s 1000000 > result.tar\n"
+			"\t$ tar -tf result.tar\n"
+			"\tfile.00001\n"
+			"\tfile.00002\n"
+			"\tfile.00003\n"
+		"\n"
+		"How to re-assemble to the original file:\n"
+			"\t$ tar -xf result.tar; cat file.* > original-3MB-file\n"
+			"\t$ tar -xOf result.tar > original-3MB-file\n"
 	);
 	exit(-1);
 }
