@@ -19,3 +19,5 @@ valgrind: clean
 
 e2e: clean $(P)
 	cd e2e && npm install && npm test
+
+all: $(P)
