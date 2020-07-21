@@ -10,7 +10,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        compiler: [gcc, clang]
+        compiler: [gcc, "gcc -std=gnu89", clang]
 
     steps:
     - uses: actions/checkout@v2
