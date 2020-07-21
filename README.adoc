@@ -13,17 +13,23 @@ It can help to handle data stream of unknown size without hitting a disk. As lon
 
 Initial motivation was to use it for backup streaming to tarsnap.com.
 
-== Build
+== Build from sources
 
 Expecting you have a POSIX compliant system:
 
 `$ make`
 
-== Tests
+== Test suite
 
 End-to-end test suite requires node.js:
 
 `$ make e2e`
+
+== FreeBSD port/package
+
+- `pkg install tar-stream-chunker`
+
+- or `cd /usr/ports/archivers/tar-stream-chunker && make install clean`
 
 == Usage
 
