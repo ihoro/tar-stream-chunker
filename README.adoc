@@ -5,6 +5,7 @@ image:https://github.com/ihoro/tar-stream-chunker.c/workflows/macos/badge.svg[li
 image:https://img.shields.io/lgtm/alerts/g/ihoro/tar-stream-chunker.c.svg?logo=lgtm&logoWidth=18[link="https://lgtm.com/projects/g/ihoro/tar-stream-chunker.c/alerts/"]
 image:https://img.shields.io/lgtm/grade/cpp/g/ihoro/tar-stream-chunker.c.svg?logo=lgtm&logoWidth=18[link="https://lgtm.com/projects/g/ihoro/tar-stream-chunker.c/context:cpp"]
 image:https://img.shields.io/lgtm/grade/javascript/g/ihoro/tar-stream-chunker.c.svg?logo=lgtm&logoWidth=18[link="https://lgtm.com/projects/g/ihoro/tar-stream-chunker.c/context:javascript"]
+image:https://img.shields.io/badge/FreeBSD-port-informational?logo=freebsd[link="https://www.freshports.org/archivers/tar-stream-chunker"]
 
 Splits stdin onto chunk files and writes resulting TAR archive to stdout.
 
