@@ -70,10 +70,11 @@ write_tar_entry(int chunk_index, void *buf, int len) {
 	memcpy(header+337, "000000 ", 7);		/* device minor */
 
 	int check_sum = 8 * 32;
-	for (int i = 0; i < 148; i++) {
+	int i;
+	for (i = 0; i < 148; i++) {
 		check_sum += header[i];
 	}
-	for (int i = 156; i < 512; i++) {
+	for (i = 156; i < 512; i++) {
 		check_sum += header[i];
 	}
 	sprintf(header+148, "%06o ", check_sum);
